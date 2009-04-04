@@ -3,6 +3,7 @@
 We would like to make Formula Conquerer easy for you to install. Please scroll to look at which type of installation you downloaded.
 
 =Windows Installer=
+----
 Follow this simple step by step guide to install Formula Conquerer
 
 1. double click the installer file that you downloaded.
@@ -18,6 +19,7 @@ You have now installed Formula Conquerer, the program should be running now.
 to run the program at anytime, simply look on your desktop for the shortcut for Formula Conquerer
 
 =Archive file=
+----
 You must have Winzip or an unzipper type software
 
 1. unzip the file wherever you want it to install
