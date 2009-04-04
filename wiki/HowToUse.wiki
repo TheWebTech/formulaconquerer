@@ -1,0 +1,14 @@
+#labels Featured
+#This explains how to use the program.
+
+= Introduction =
+
+This explains how to use the program
+
+
+= Details =
+
+To use Formula Conquer basically look through the list of modules,
+find what you need use the number next to the module name, type it in
+then hit enter. The program is pretty self explanitory it will guide you
+through the other steps.
