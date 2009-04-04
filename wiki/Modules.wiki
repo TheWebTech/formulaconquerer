@@ -1,0 +1,23 @@
+#labels Featured,Features,Modules
+==Introduction==
+Formula Conquerer is made up of tons of different "modules" these modules add formulas and add useful problem solving tools.
+
+The current Version of Formula Conquerer has the following Modules
+----
+Module Name           #
+-----------         -----
+Even or odd?           1
+Circumfrence           2
+Area of rect.          3
+Area of Triangle       4
+Volume of Cube         5
+Compare Numbers        6
+Prime                  7
+Temp. converter        8
+Age Calculator         9
+Metric Unit Converter 10
+Metric English Conv.  11
+Simple Equation Calc. 12
+Law of Sines          13 - incomplete
+Help Module          911
+------------------------
