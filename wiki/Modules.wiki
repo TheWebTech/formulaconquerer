@@ -3,7 +3,9 @@
 Formula Conquerer is made up of tons of different "modules" these modules add formulas and add useful problem solving tools.
 
 The current Version of Formula Conquerer has the following Modules
+
 ----
+{{{
 Module Name           #
 -----------         -----
 Even or odd?           1
@@ -21,3 +23,4 @@ Simple Equation Calc. 12
 Law of Sines          13 - incomplete
 Help Module          911
 ------------------------
+}}}
