@@ -21,6 +21,9 @@ Metric Unit Converter 10
 Metric English Conv.  11
 Simple Equation Calc. 12
 Law of Sines          13 - incomplete
+Basic Calculator      14
+Proportion Calc.       15
 Help Module          911
+Update               912
 ------------------------
 }}}
