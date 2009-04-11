@@ -1,7 +1,9 @@
 #labels Featured
-Recent Updates: 
+Recent Updates:
   * Modules 11 12 and 13 added.
   * made into EXE format so that it can be distributed.
   * added recent updates and Help Module
+  April 11 2009
   * added Update module
   * added step by step instructions for area of rectangle
+<wiki:gadget url="http://spreadsheets.google.com/pub?key=pr6wooOJlCGNUufvAzfU9bQ" height="500" border="0" />
