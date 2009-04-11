@@ -1,7 +1,7 @@
 #labels Phase-QA,Phase-Design
 =Module Ideas=
-Please comment with ideas for Modules/features for the program, we would be happy to incorporate whatever math type module you want.
+Please comment with ideas for Modules/features for the program, we would be happy to incorporate whatever math type module you want. If you think the formula is somewhat complex please post a link to a site that has the formula or post the formula with an explanation of it.
 
 ==Accepted Suggestions==
-  *Simple Proportion Calculator
-  *basic calculator
+  * Simple Proportion Calculator
+  * basic calculator
