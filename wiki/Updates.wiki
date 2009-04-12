@@ -1,6 +1,9 @@
 #labels Featured
 To view all the updates please visit [http://spreadsheets.google.com/pub?key=pr6wooOJlCGNUufvAzfU9bQ Our Update page].
 
-Current Version of Formula Conquerer is posted here:
+
 
 current version is displayed on the front page of the website.
+
+Future expected updates:
+||Basic Calculator||||now supports Sin Cos Tan, many other math features and it has Ans(you can use an answer you got from a previous problem)||
