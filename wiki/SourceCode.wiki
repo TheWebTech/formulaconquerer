@@ -577,7 +577,7 @@ while bob == 1:
         print "* to multiply"
         print "** to setsomething to a power, example: 10**2 = 100"
         print "sqrt(x) to use a square root, Example: sqrt(4) = 2"
-        print "sin(x) cos(x) tan(x) just replace x with your number
+        print "sin(x) cos(x) tan(x) just replace x with your number"
         print "Ans to use the answer from the previous problem in the new problem"
         print "if you enter end() you will go back to the menu"
         print"------------------------------------ "
@@ -704,6 +704,8 @@ while bob == 1:
     else:
         print "Invalid option, please enter the number of the module in the menu"
         newline(3)
+        
+
         
 
 }}}
