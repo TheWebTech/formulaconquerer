@@ -17,3 +17,6 @@ http://docs.python.org/library/math.html
 
 Tips:
 Please test your modules before sending them in.
+
+
+Please comment if you would like a function to be added that would make module making easier. I want this program to be really easy for all to develop, even those who don't know Python.
