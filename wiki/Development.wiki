@@ -1,0 +1,17 @@
+#labels Phase-Design,Phase-Implementation
+==Development==
+Obviously this program needs more stuff, and I've planned on having other people help make modules to make it better. I've made a few functions to help you out with making your modules and modifying current ones.
+
+The program was made in python and I will not accept revisions or changes made in any other language.
+
+===Special Functions===
+I have imported into the program the Math Module
+the documentation can be found at
+http://docs.python.org/library/math.html
+
+||newline(x)||adds x amount of line breaks||
+||end()||its a smooth way to exit your module it's kind of required||
+
+
+Tips:
+Please test your modules before sending them in.
