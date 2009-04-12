@@ -1,0 +1,9 @@
+=Contributors=
+Since I want to honor the people who make this program, I will try my best to list all contributors on this page
+
+
+Jon McLaren - foundation of the program and most of the modules
+
+Zach Tilford - kind of helped inspire the idea of making this open source, he also designed a few modules
+
+Eric Ruppert - Added some modules and modified some existing ones, the first person to add modules and stuff remotely(he wasn't with me when he did his stuff, Zach was.)
