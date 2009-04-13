@@ -15,3 +15,7 @@ New Modules to be added:
 ||Edge of a Cube||
 ||Radius of a Circle||
 ||Area of Any Polygon||
+
+
+Not in the next update but a goal:
+||A modified menu that makes accessing things faster and easier. The current one doesn't even display all the way, it gets cut off||
