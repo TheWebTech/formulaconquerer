@@ -2,8 +2,16 @@
 To view all the updates please visit [http://spreadsheets.google.com/pub?key=pr6wooOJlCGNUufvAzfU9bQ Our Update page].
 
 
-
 current version is displayed on the front page of the website.
+
+
+Next Version expected: Sunday 4/19 - this upcoming sunday
+
+
 
 Future expected updates:
 ||Basic Calculator||||now supports Sin Cos Tan, many other math features and it has Ans(you can use an answer you got from a previous problem)||
+New Modules to be added:
+||Edge of a Cube||
+||Radius of a Circle||
+||Area of Any Polygon||
