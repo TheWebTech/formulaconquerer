@@ -16,6 +16,10 @@ New Modules to be added:
 ||Radius of a Circle||
 ||Area of Any Polygon||
 
+Possible but may not be in this one:
+||Distance Formula||
+||Mid Point||
+
 
 Not in the next update but a goal:
 ||A modified menu that makes accessing things faster and easier. The current one doesn't even display all the way, it gets cut off||
