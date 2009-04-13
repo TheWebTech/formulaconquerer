@@ -2,6 +2,8 @@
 =This is litterally the full source code=
 Any distribution of this code without consent is illegal. You may use parts of the code in your own programs, just not all of it. blah blah blah the rest is in the GPL
 
+Also please note this code is usually updated when changes to the program are made, this is not the code from the last release, this is further updated. The python file that is the source code you can download is the last for sure Stable Source, you may use that program through python.
+
 {{{
 #Formula Conquerer and most modules were created by Jon McLaren
 #http://tyr.ucoz.net
@@ -11,7 +13,7 @@ Any distribution of this code without consent is illegal. You may use parts of t
 #formula conquerer
 from math import sqrt
 from math import *
-version=1.01
+version=1.02
 title = "Formula Conquerer"
 def end():
     print ""
@@ -50,6 +52,9 @@ while bob == 1:
     print "Law of Sines          13 - incomplete"
     print "Even or Odd           14"
     print "Proportion Calc.      15"
+    print "Edge of a Cube        16"
+    print "Radius of a Circle    17"
+    print "Area of Any Polygon   18"
     print "Help Module          911"
     print "Update               912"
     print "------------------------"
@@ -57,47 +62,35 @@ while bob == 1:
     print "To exit the program enter 0"
     menu= input('which formula do you need to conquer?(enter it\'s number) ')
     newline(2)
+	
     if menu == 0:
         print "Thank you for using", title, "!"
         break
-    elif menu==911:
-        print "Help"
-        print"--------"
-        print "To use Formula Conquer basically look through the list of modules,"
-        print"find what you need use the number next to the module name, type it in"
-        print"then hit enter. The program is pretty self explanitory it will guide you"
-        print "through the other steps."
-        print "if you have any problems with the program email jonmclaren1@gmail.com"
-        print "be sure to have the version number in your email."
-        print "Your Version is",version
-        end()
-    elif menu==912:
-        print "Update"
-        print "Since formula conquerer doesn't have an auto update feature, you"
-        print "Must manually check the website for an update:"
-        print "        http://code.google.com/p/formulaconquerer/ "
-        print
-        print "here's how you can see if you need to update Formula Conquerer:"
-        print "Your version number is:",version
-        checkv= input("Enter the current version from the website: ")
-        if checkv>version:
-            print "Your Version is out of date! It is highly suggested that you"
-            print "Update now!"
-        elif checkv<version:
-            print "Hmm, weird you have a version that is earlier than released."
-        elif checkv==version:
-            print "You have the newest Version of Formula Conquerer congratulations"
-            print "You do not need to update!"
-        end()
-    elif menu == 14:
-        #even odd calculator
-        number = input('Enter a number to see if it is odd or even: ')
-        if number % 2 == 0:
-            print number,"is Even"
-        else:
-            print number,"is Odd"
-        end()
-    elif menu==2:
+    elif menu == 1:
+        print "BASIC CALCULATOR"
+        print "Type out the problem, use the following symbols to use the calculator"
+        print "+ to add"
+        print "- to subtract"
+        print "/ to divide"
+        print "* to multiply"
+        print "** to setsomething to a power, example: 10**2 = 100"
+        print "sqrt(x) to use a square root, Example: sqrt(4) = 2"
+        print "sin(x) cos(x) tan(x) just replace x with your number"
+        print "Ans to use the answer from the previous problem in the new problem"
+        print "if you enter end() you will go back to the menu"
+        print"------------------------------------ "
+        Ans=1
+        while 1:
+            Ans=input("Enter problem: ")
+            if Ans=="exit":
+                end()
+                break
+            else:
+                
+                print "The Answer is:",Ans
+                end()
+	
+    elif menu == 2:
         #circumfrence
         print "Calculate Circumfrence"
         r = input('Radius: ')
@@ -188,7 +181,7 @@ while bob == 1:
                 print "the area of your rectangle is:",a
                 
         end()
-    elif menu== 4:
+    elif menu == 4:
         #area of triangle
         print "Area of a Triangle"
         print "the area of a triangle is calculated by the formula 1/2 * base * Height"
@@ -529,7 +522,7 @@ while bob == 1:
             ans = num * 0.621
             print "Miles:",ans
         end()
-    elif menu ==12:
+    elif menu == 12:
         print"simple equation calculator"
         print "enter what comes before the = sign"
         print "in other words enter A and B and we will calculate A = B"
@@ -537,7 +530,7 @@ while bob == 1:
         B=input('B')
         print A,"=",B
         end()
-    elif menu==13:
+    elif menu == 13:
         print "WARNING:Module is incomplete! module will execute however something may be missing and answers will be wrong" 
         print "Law of Sines"
         print"     ."
@@ -567,32 +560,17 @@ while bob == 1:
         print"     %s " % c
         print
         end()
-
-    elif menu==1:
-        print "BASIC CALCULATOR"
-        print "Type out the problem, use the following symbols to use the calculator"
-        print "+ to add"
-        print "- to subtract"
-        print "/ to divide"
-        print "* to multiply"
-        print "** to setsomething to a power, example: 10**2 = 100"
-        print "sqrt(x) to use a square root, Example: sqrt(4) = 2"
-        print "sin(x) cos(x) tan(x) just replace x with your number"
-        print "Ans to use the answer from the previous problem in the new problem"
-        print "if you enter end() you will go back to the menu"
-        print"------------------------------------ "
-        Ans=1
-        while 1:
-            Ans=input("Enter problem: ")
-            if Ans=="exit":
-                end()
-                break
-            else:
-                
-                print "The Answer is:",Ans
-        
-        
-    elif menu==15:
+		
+    elif menu == 14:
+        #even odd calculator
+        number = input('Enter a number to see if it is odd or even: ')
+        if number % 2 == 0:
+            print number,"is Even"
+        else:
+            print number,"is Odd"
+        end()
+		
+    elif menu == 15:
         print "Proportion Calculator"
         print "Use lower-case x for the unknown"
         newline(1)
@@ -700,7 +678,130 @@ while bob == 1:
             print
             print "Your answer is:",D
         end()
-        
+    elif menu == 16:
+        #edge of a cube
+        print"Cube edge Calculator"
+        newline(1)
+        print "this is an edge"
+        print " ____|______"
+        print "|\        | \ "
+        print "| \_______|__\ "
+        print "| |       |  | "
+        print "|_|_______|  | "
+        print "\ |        \ |"
+        print " \|_________\| " 
+        v = input('Enter the volume of the cube you wish to find the side of: ')
+        side = sqrt(sqrt(v))
+        print "     ",side
+        print " _____|_____"
+        print "|\        | \ "
+        print "| \_______|__\ "
+        print "| |       |  | "
+        print "|_|_______|  | "
+        print "\ |        \ |"
+        print " \|_________\| " 
+        print "The edge of the Cube is:",v
+        end()
+    elif menu == 17:
+        #radius from Circumference
+        print "Calculate Radius"
+        c = input("Enter the circumference: ")
+        pi = 3.1415926
+        r =  c / 2 / pi
+        d = r * 2
+        print"                __.......__                          "
+        print"           _.-''     |      '-..                    "
+        print"        ,-'          |          '-.                 " 
+        print"      ,'             |             '.   		" 
+        print"    ,'               |               '\             " 
+        print"   /                 |                 `            " 
+        print"  /                  |                  `.          " 
+        print" /                   |                    \         " 
+        print"|                    |                     |         " 
+        print"|                    |                     |         "  
+        print"|                    |       ",r," <----Radius"  
+        print"|                    ._____________________|        " 
+        print"|                    |                    .'        " 
+        print"|                    |                    |         " 
+        print"|                    |                   .'         " 
+        print" \                   |                  /           " 
+        print"  \                  |                ,'            "  
+        print"   `                 |               /              "     
+        print"    '.               |             ,'               "        
+        print"      '-.            |          _,'                 "         
+        print"         '-._        |      _,-'                    "       
+        print"             '`--....|..---'                        "
+        print"                     |                              "
+        print"      Diameter--> ",d
+        newline(1)
+        print"Radius Formula: Circumference / pi / 2"
+        print c, "/pi/2"
+        print "Radius: ",r
+        end()
+
+    elif menu == 18:
+        #area of a n-agon
+        print "Calculates the area of a figure with n number of sides"
+        print "Just put in the length of the side and the apothem"
+        print "                                       "
+        print "               ,------------,          "
+        print "             ,`              `,        "
+        print "           ,`                  `,      "
+        print "         .`                      `.    "
+        print "         |                        |    "
+        print "         |                        |    "
+        print "         |           |            |    "
+        print "         |           | -apothem   |    "
+        print "          `.         |          .`     "
+        print "            `.       |        .`       "
+        print "              `.     |      .`         "
+        print "                '----------`           "
+        print "                   BASE                "
+        a=input("Apothem: ")
+        b=input("Length of side: ")
+        n=input("number of sides: ")
+        names= ["point","line","angle","triangle","square","pentagon","hexagon","heptagon","octagon",        "nonagon","decagon"]
+        if n > 2:
+            area= (.5 * a * b) * n
+            print "The area of your figure is", area
+            if n > 10:
+                print "The name of your shape is a(n) ", n, "-agon"
+            else:
+                print "The name of your shape is a(n) ", names[n]
+        else:
+            print "Thats not a shape its a(n)", names[n]
+        end()
+		
+    elif menu == 911:
+        print "Help"
+        print"--------"
+        print "To use Formula Conquer basically look through the list of modules,"
+        print"find what you need use the number next to the module name, type it in"
+        print"then hit enter. The program is pretty self explanitory it will guide you"
+        print "through the other steps."
+        print "if you have any problems with the program email jonmclaren1@gmail.com"
+        print "be sure to have the version number in your email."
+        print "Your Version is",version
+        end()
+		
+    elif menu == 912:
+        print "Update"
+        print "Since formula conquerer doesn't have an auto update feature, you"
+        print "Must manually check the website for an update:"
+        print "        http://code.google.com/p/formulaconquerer/ "
+        print
+        print "here's how you can see if you need to update Formula Conquerer:"
+        print "Your version number is:",version
+        checkv= input("Enter the current version from the website: ")
+        if checkv>version:
+            print "Your Version is out of date! It is highly suggested that you"
+            print "Update now!"
+        elif checkv<version:
+            print "Hmm, weird you have a version that is earlier than released."
+        elif checkv==version:
+            print "You have the newest Version of Formula Conquerer congratulations"
+            print "You do not need to update!"
+        end()
     else:
         print "Invalid option, please enter the number of the module in the menu"
         newline(3)
