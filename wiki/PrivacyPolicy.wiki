@@ -8,4 +8,6 @@ Because I know alot of people will suspect a program like this to have a virus o
 
 If you suspect that someone has distributed the program without our permission please inform us.
 
-All our data is hosted by Google, probably the best internet company ever made, so if you don't think your information is secure, then theres no pleasing you.
+All our data is hosted by Google, probably the best internet company ever made, so if you don't think our program is secure and Malware free, then theres no pleasing you.
+
+You can use any malware/antivirus scanner and scan the program if you don't believe me. 
