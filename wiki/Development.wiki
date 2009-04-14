@@ -11,7 +11,7 @@ http://docs.python.org/library/math.html
 
 ||newline(x)||adds x amount of line breaks||
 ||end()||its a smooth way to exit your module it's kind of required||
-
+||yesno(Questiontext)||Need to ask a yes or no question? enter the question in as "questiontext" then you will get the answer as the variable "question"||
 
 
 
