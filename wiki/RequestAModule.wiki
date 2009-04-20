@@ -6,3 +6,4 @@ Please comment with ideas for Modules/features for the program, we would be happ
 ||||||Progress||
 ||Simple Proportion Calculator||||<font color="green">100%</font>||
 ||basic calculator||||<font color="green">80%</font>||
+||fractions/ratio reducer||||<font color="red">0%</font>||
