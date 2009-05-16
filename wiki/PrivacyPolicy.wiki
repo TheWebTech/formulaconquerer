@@ -4,6 +4,9 @@ Okay well this pretty simple, NO DATA IS SAVED NOR SENT BY THE PROGRAM. It only 
 If you take one of our surveys, and you have entered your email address, rest assured we won't do anything with your email, it will stay safely locked up, and you will only be contacted if we actually want to talk to you more about the product. Your email will not be viewed by anyone other than Jon McLaren.
 
 =Security=
+
+[http://virusscan.jotti.org/en/scanresult/6afbf35fef5f59a4a9fa3a8fd022838417f19a96 click here for scan report from tons of different virus scanners]
+
 Because I know alot of people will suspect a program like this to have a virus or something harmful, as long as you get this off this site, you wont get a virus and you wont get any malware from Formula Conqueror. Do not trust any other service offering this program, as they were not given permission to distribute it, and they could change the code of the program that they download off our server and distribute it with malware.
 
 If you suspect that someone has distributed the program without our permission please inform us.
