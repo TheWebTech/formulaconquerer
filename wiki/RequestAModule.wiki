@@ -4,7 +4,9 @@ Please comment with ideas for Modules/features for the program, we would be happ
 
 ==Accepted Suggestions==
 ||||||Progress||
-||Simple Proportion Calculator||||<font color="green">100%</font>||
+
 ||basic calculator||||<font color="green">80%</font>(kinda buggy, but does math correctly)||
-||fractions/ratio reducer||||<font color="green">100%</font>||
-||Pythagorean Theorum||||<font color="green">100%</font>||
+
+
+
+Note: Suggestions that have been added are removed from the accepted suggestions after the version with the new features are added
