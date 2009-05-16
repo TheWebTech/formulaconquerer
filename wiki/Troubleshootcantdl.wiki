@@ -1,0 +1,11 @@
+=School Filter is blocking download=
+The program gets blocked by the school because the installer is an exe file.
+
+Here's what you can do to still use it. Go to http://code.google.com/p/formulaconquerer/downloads/list
+
+download the .py file also called source code or whatever.
+
+Then put it into your accounts folders, go to the desktop, go to the "App Explorer" icon click it twice to open it, then look for an icon called "Python" double click that, then click the file that you downloaded, the program will now work.
+
+You may have to run python before you use the program most times just because the schools servers don't keep python on your computers.
+
