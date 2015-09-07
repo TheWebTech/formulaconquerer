@@ -2,14 +2,13 @@
                                                                      
                                              
 #Formula Conquerer and most modules were created by Jon McLaren
-#http://tyr.ucoz.net
-#http://priestoftyr.co.nr
+
 #The source code and all files associated with Formula Conquerer can be found
-#at: http://code.google.com/p/formulaconquerer/
+#at: https://github.com/TheWebTech/formulaconquerer
 #formula conquerer
 from math import sqrt
 from math import *
-version=1.07
+
 title = "Formula Conquerer"
 
 #special variables
@@ -54,8 +53,8 @@ def newline(L):
         print ""
         L = L - 1
 
-print "Welcome to the "+title+"! version",version
-print "Created by Jon McLaren and Zach Tilford"
+print "Welcome to the "+title+"!"
+print "Created by Jon McLaren"
 print "--------------------------------------------"
 
 newline(1)
@@ -78,7 +77,7 @@ while bob == 1:
     print "Metric Unit Converter 10"
     print "Metric English Conv.  11"
     print "Simple Equation Calc. 12"
-    print "Law of Sines          13 - incomplete"
+    #print "Law of Sines          13 - incomplete"
     print "Even or Odd           14"
     print "Proportion Calc.      15"
     print "Edge of a Cube        16"
@@ -589,6 +588,7 @@ while bob == 1:
         print A,"=",B
         end()
     elif menu == 13:
+        """
         print "WARNING:Module is incomplete! module will execute however something may be missing and answers will be wrong" 
         print "Law of Sines"
         print"     ."
@@ -617,6 +617,7 @@ while bob == 1:
         print"/%s_______%s\ " %(A,B)
         print"     %s " % c
         print
+        """
         end()
 		
     elif menu == 14:
@@ -1098,28 +1099,15 @@ function lcm(t1,t2){
         print"find what you need use the number next to the module name, type it in"
         print"then hit enter. The program is pretty self explanitory it will guide you"
         print "through the other steps."
-        print "if you have any problems with the program email jonmclaren1@gmail.com"
-        print "be sure to have the version number in your email."
-        print "Your Version is",version
         end()
                 
     elif menu == 912:
         print "Update"
         print "Since formula conquerer doesn't have an auto update feature, you"
         print "Must manually check the website for an update:"
-        print "        http://code.google.com/p/formulaconquerer/ "
-        print
-        print "here's how you can see if you need to update Formula Conquerer:"
-        print "Your version number is:",version
-        checkv= input("Enter the current version from the website: ")
-        if checkv>version:
-            print "Your Version is out of date! It is highly suggested that you"
-            print "Update now!"
-        elif checkv<version:
-            print "Hmm, weird you have a version that is earlier than released."
-        elif checkv==version:
-            print "You have the newest Version of Formula Conquerer congratulations"
-            print "You do not need to update!"
+        print "        https://github.com/TheWebTech/formulaconquerer "
+        
+      
         end()
         
     else:
