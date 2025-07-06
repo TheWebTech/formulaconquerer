@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+    font-family: 'VT323', monospace; /* Pixelated font */
+    background-color: #333; /* Darker background for contrast, like a calculator body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #1c3b21; /* Dark green text, typical for TI screens */
+}
+
+#chat-container {
+    width: 320px; /* Typical width of a TI-83 screen in pixels (scaled up) */
+    height: 240px; /* Typical height (scaled up) */
+    background-color: #c8d8c0; /* Pale green/greyish screen background */
+    border: 20px solid #4a4a4a; /* Calculator casing border */
+    border-radius: 10px; /* Rounded corners for the casing */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0,0,0,0.3); /* Shadow for depth and inner shadow for screen */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 5px; /* Small padding inside the screen border */
+    font-size: 18px; /* Larger font size for pixel look */
+    image-rendering: pixelated; /* Helps with the pixel look for any images/borders */
+}
+
+#chat-history {
+    flex-grow: 1;
+    padding: 5px 8px; /* Minimal padding inside the screen */
+    overflow-y: auto;
+    /* We'll let messages stack normally from top to bottom, like a calculator screen */
+    /* Remove flex-direction: column-reverse; */
+    display: flex;
+    flex-direction: column; /* Stack messages top-to-bottom */
+}
+
+/* Custom scrollbar for the TI look */
+#chat-history::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat-history::-webkit-scrollbar-track {
+    background: #b0c0a8; /* Slightly darker than screen */
+}
+
+#chat-history::-webkit-scrollbar-thumb {
+    background: #4a4a4a; /* Color of the casing */
+    border-radius: 0px; /* Square scrollbar thumb */
+}
+
+
+.message {
+    margin-bottom: 2px; /* Very little space between lines */
+    line-height: 1.1; /* Tight line height */
+    /* Remove individual message bubbles for a continuous screen look */
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    white-space: pre-wrap; /* Crucial for ASCII art and formatting */
+}
+
+.user-message {
+    /* User messages will just be text, perhaps with a small prefix if desired */
+    /* For now, they'll blend in, with JS adding "USER> " or similar */
+    color: #1c3b21; /* Same as program text */
+}
+
+.program-message {
+    /* Program messages are the default state */
+     color: #1c3b21; /* Dark green/black text */
+}
+
+#input-area {
+    display: flex;
+    padding: 3px;
+    background-color: #c8d8c0; /* Same as screen background */
+    border-top: 1px solid #889880; /* Subtle separator line */
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 3px 5px;
+    border: 1px solid #889880; /* Subtle border for input */
+    border-radius: 0px; /* Square input field */
+    background-color: #c8d8c0; /* Screen background */
+    color: #1c3b21; /* Text color */
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    outline: none; /* Remove default browser outline */
+}
+
+#send-button {
+    /* Hide the send button, input will be handled by "Enter" key.
+       Alternatively, style it like a TI calculator button if one was used for sending.
+       For now, hiding it simplifies the "screen only" look. */
+    display: none;
+}
+
+/* Blinking cursor effect for the input field (optional, can be done with JS too) */
+#user-input:focus {
+    /* Could add a box-shadow or border change to indicate focus, TI-style */
+    border: 1px solid #1c3b21;
+}
