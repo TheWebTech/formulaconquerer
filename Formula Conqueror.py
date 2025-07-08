@@ -35,10 +35,18 @@ def menu_3DGeo():
     print ""
 
 def yesno(questiontext):
-    question=0
-    while question != "yes" or question != "no":
-        question=raw_input(questiontext)
-        question.lower()
+    question = ""  # Initialize as string to avoid issues with .lower() on first pass if not entering loop
+    while question != "yes" and question != "no":
+        question = raw_input(questiontext)
+        question = question.lower()
+        # Add a check to allow 'y' and 'n' as shorthand
+        if question == "y":
+            question = "yes"
+        elif question == "n":
+            question = "no"
+        # If input is still not "yes" or "no", inform the user (optional, but good practice)
+        if question != "yes" and question != "no":
+            print "Please answer 'yes' or 'no' (or 'y'/'n')."
     return question
         
     
@@ -91,7 +99,13 @@ while bob == 1:
     print "------------------------"
     print "For Help using this program type 911 then hit enter"
     print "To exit the program enter 0"
-    menu= input('which formula do you need to conquer?(enter it\'s number) ')
+    try:
+        menu_input = raw_input('which formula do you need to conquer?(enter it\'s number) ')
+        menu = int(menu_input)
+    except ValueError:
+        print "Invalid input. Please enter a number."
+        newline(2)
+        continue  # Skip the rest of the loop and show the menu again
     newline(2)
 	
     if menu == 0:
