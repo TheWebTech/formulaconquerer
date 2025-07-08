@@ -428,13 +428,22 @@ Find out in relation to 1 Meter, what exponent that metric unit would be that yo
     if (resizeButton && chatContainer) {
         resizeButton.addEventListener('click', () => {
             chatContainer.classList.toggle('expanded');
-            // Optional: Change button text based on state
             if (chatContainer.classList.contains('expanded')) {
-                resizeButton.textContent = 'Shrink';
+                resizeButton.innerHTML = '&#x2922;'; // Unicode for arrows pointing inwards (Restore Down)
+                // Alternative: &#x1F5D7; (WINDOW MINIMIZE SYMBOL - might be too small/specific)
+                // Alternative: &#x26F6; (SQUARE FOUR CORNERS - a bit abstract)
             } else {
-                resizeButton.textContent = 'Expand';
+                resizeButton.innerHTML = '&#x26F9;'; // Unicode for Square with Upper Right Quadrant (Maximize-like)
+                // Alternative: &#x1F5D6; (WINDOW MAXIMIZE SYMBOL - might be too small/specific)
+                // Alternative: &#x21F1; (NORTH WEST ARROW TO CORNER) + &#x21F2; (SOUTH EAST ARROW TO CORNER) - too complex for one button
             }
         });
+        // Set initial icon
+        if (chatContainer.classList.contains('expanded')) {
+            resizeButton.innerHTML = '&#x2922;';
+        } else {
+            resizeButton.innerHTML = '&#x26F9;';
+        }
     }
 
     // --- Module Implementations ---
