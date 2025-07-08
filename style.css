@@ -103,3 +103,45 @@ body {
     /* Could add a box-shadow or border change to indicate focus, TI-style */
     border: 1px solid #1c3b21;
 }
+
+#resize-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #4a4a4a; /* Same as border */
+    color: #c8d8c0; /* Same as screen background */
+    border: 2px solid #1c3b21; /* Dark green border */
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 10; /* Ensure button is above chat history */
+}
+
+#resize-button:hover {
+    background-color: #5a5a5a;
+}
+
+#resize-button:active {
+    background-color: #3a3a3a;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Expanded state for chat container */
+#chat-container.expanded {
+    width: 640px; /* Double the original width */
+    height: 480px; /* Double the original height */
+    font-size: 20px; /* Slightly larger font for readability */
+}
+
+/* Adjust chat history padding for expanded view if needed */
+#chat-container.expanded #chat-history {
+    padding: 8px 12px;
+}
+
+/* Adjust input area for expanded view if needed */
+#chat-container.expanded #user-input {
+    font-size: 20px; /* Match container font size */
+}

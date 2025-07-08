@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const chatHistory = document.getElementById('chat-history');
     const userInput = document.getElementById('user-input');
+    const resizeButton = document.getElementById('resize-button'); // Added resize button
+    const chatContainer = document.getElementById('chat-container'); // Added chat container
     // const sendButton = document.getElementById('send-button'); // Not used due to TI-83 style
 
     const PI = 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679;
@@ -421,6 +423,19 @@ Find out in relation to 1 Meter, what exponent that metric unit would be that yo
 
     // --- Initial Load ---
     displayMainMenu();
+
+    // --- Resize Button Functionality ---
+    if (resizeButton && chatContainer) {
+        resizeButton.addEventListener('click', () => {
+            chatContainer.classList.toggle('expanded');
+            // Optional: Change button text based on state
+            if (chatContainer.classList.contains('expanded')) {
+                resizeButton.textContent = 'Shrink';
+            } else {
+                resizeButton.textContent = 'Expand';
+            }
+        });
+    }
 
     // --- Module Implementations ---
 
