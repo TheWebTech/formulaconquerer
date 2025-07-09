@@ -12,8 +12,10 @@ body {
 #page-wrapper {
     display: flex;
     height: 100vh;
-    align-items: center; /* Vertically center chat-container if page-wrapper is taller */
-    justify-content: flex-start; /* Align items to the start, info-panel then chat-container */
+    align-items: center; /* Vertically center chat-container */
+    justify-content: center; /* Horizontally center chat-container in the available space */
+    padding-left: 280px; /* Make space for the fixed info-panel. Must match info-panel width. */
+    box-sizing: border-box; /* Ensure padding doesn't add to total width in a way that breaks layout */
 }
 
 #info-panel {
@@ -30,6 +32,7 @@ body {
     font-size: 16px; /* Slightly smaller than chat for differentiation */
     line-height: 1.4;
     border-right: 5px solid #333; /* Separator */
+    z-index: 10; /* Ensure info-panel stays on top if other elements are added */
 }
 
 #info-panel p {
@@ -37,8 +40,8 @@ body {
 }
 
 #chat-container {
-    /* chat-container will now be pushed to the right by info-panel's width + some margin */
-    margin-left: 300px; /* info-panel width (280px) + 20px margin */
+    /* margin-left will be handled by page-wrapper's padding and justify-content */
+    /* margin-left: 300px; */ /* REMOVED */
     width: 320px; /* Typical width of a TI-83 screen in pixels (scaled up) */
     height: 240px; /* Typical height (scaled up) */
     background-color: #c8d8c0; /* Pale green/greyish screen background */
@@ -139,13 +142,14 @@ body {
 
     #page-wrapper {
         justify-content: center; /* Center chat-container when info-panel is hidden */
+        padding-left: 0; /* Remove padding when info-panel is hidden */
     }
 
     #chat-container {
-        margin-left: 0; /* Reset margin when info-panel is hidden */
+        margin-left: 0; /* Ensure no residual margin */
     }
 
-    /* Ensure body still allows chat-container to center */
+    /* Ensure body still allows chat-container to center. This might be redundant if page-wrapper handles it. */
     body {
         display: flex;
         justify-content: center;
