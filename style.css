@@ -42,8 +42,8 @@ body {
 #chat-container {
     /* margin-left will be handled by page-wrapper's padding and justify-content */
     /* margin-left: 300px; */ /* REMOVED */
-    width: 320px; /* Typical width of a TI-83 screen in pixels (scaled up) */
-    height: 240px; /* Typical height (scaled up) */
+    width: 239px; /* Adjusted for 16 char width of chat-history */
+    height: 240px; /* Adjusted for 8 line height of chat-history + input area */
     background-color: #c8d8c0; /* Pale green/greyish screen background */
     border: 20px solid #4a4a4a; /* Calculator casing border */
     border-radius: 10px; /* Rounded corners for the casing */
@@ -65,6 +65,7 @@ body {
     /* Remove flex-direction: column-reverse; */
     display: flex;
     flex-direction: column; /* Stack messages top-to-bottom */
+    height: 158px; /* Adjusted for 8 lines of text */
 }
 
 /* Custom scrollbar for the TI look */
