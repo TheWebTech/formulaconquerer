@@ -3,15 +3,42 @@
 body {
     font-family: 'VT323', monospace; /* Pixelated font */
     background-color: #333; /* Darker background for contrast, like a calculator body */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* display: flex; justify-content: center; align-items: center; height: 100vh; */ /* Modified for new layout */
     margin: 0;
     color: #1c3b21; /* Dark green text, typical for TI screens */
+    height: 100vh; /* Ensure body takes full viewport height */
+}
+
+#page-wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center; /* Vertically center chat-container if page-wrapper is taller */
+    justify-content: flex-start; /* Align items to the start, info-panel then chat-container */
+}
+
+#info-panel {
+    width: 280px; /* Slightly wider for better text flow */
+    height: 100vh;
+    position: fixed; /* Fixed to the left */
+    left: 0;
+    top: 0;
+    background-color: #4a4a4a; /* Same as calculator casing for thematic consistency */
+    color: #c8d8c0; /* Pale green/greyish text, like screen background */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    overflow-y: auto; /* Scroll if content is too long */
+    font-size: 16px; /* Slightly smaller than chat for differentiation */
+    line-height: 1.4;
+    border-right: 5px solid #333; /* Separator */
+}
+
+#info-panel p {
+    margin-bottom: 15px;
 }
 
 #chat-container {
+    /* chat-container will now be pushed to the right by info-panel's width + some margin */
+    margin-left: 300px; /* info-panel width (280px) + 20px margin */
     width: 320px; /* Typical width of a TI-83 screen in pixels (scaled up) */
     height: 240px; /* Typical height (scaled up) */
     background-color: #c8d8c0; /* Pale green/greyish screen background */
@@ -102,4 +129,39 @@ body {
 #user-input:focus {
     /* Could add a box-shadow or border change to indicate focus, TI-style */
     border: 1px solid #1c3b21;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    #info-panel {
+        display: none; /* Hide info panel on small screens */
+    }
+
+    #page-wrapper {
+        justify-content: center; /* Center chat-container when info-panel is hidden */
+    }
+
+    #chat-container {
+        margin-left: 0; /* Reset margin when info-panel is hidden */
+    }
+
+    /* Ensure body still allows chat-container to center */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 400px) { /* Further adjustments for very small screens if needed */
+    #chat-container {
+        width: 95%; /* Make chat container more fluid */
+        height: auto; /* Adjust height as needed or set a specific smaller height */
+        max-height: 80vh; /* Example max height */
+        font-size: 16px; /* Slightly smaller font for smaller screens */
+    }
+
+    #user-input {
+        font-size: 16px; /* Match chat container font size */
+    }
 }
