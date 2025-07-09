@@ -20,9 +20,11 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0,0,0,0.3); /* Shadow for depth and inner shadow for screen */
     display: flex;
     flex-direction: column;
+    /* position: relative; removed, no longer needed for button */
     overflow: hidden;
     padding: 5px; /* Small padding inside the screen border */
     font-size: 18px; /* Larger font size for pixel look */
+    anchor-name: --chat-screen; /* Define #chat-container as an anchor */
     image-rendering: pixelated; /* Helps with the pixel look for any images/borders */
 }
 
@@ -102,4 +104,56 @@ body {
 #user-input:focus {
     /* Could add a box-shadow or border change to indicate focus, TI-style */
     border: 1px solid #1c3b21;
+}
+
+#resize-button {
+    position: absolute; /* Required for anchor positioning */
+
+    /* CSS Anchor Positioning */
+    /* target: top edge of button is 18px above anchor's top content/padding edge */
+    top: calc(anchor(--chat-screen top) - 18px);
+    /* target: left edge of button positions it so its right edge is 2px to the right of anchor's right content/padding edge */
+    /* Button width approx: 18px char + 8px padding + 2px border = 28px */
+    left: calc(anchor(--chat-screen right) + 2px - 28px);
+
+    width: 28px; /* Set fixed width for reliable positioning with calc */
+    text-align: center; /* Center the icon now that width is fixed */
+    background-color: #4a4a4a; /* Match border color */
+    color: #c8d8c0; /* Screen background color for icon */
+    border: 1px solid #333; /* Slightly darker border for definition */
+    border-radius: 3px;
+    padding: 1px 4px; /* Smaller padding for icon */
+    font-family: 'VT323', monospace; /* Keep font for consistency if needed */
+    font-size: 18px; /* Icon size */
+    line-height: 1; /* Ensure icon is centered */
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+#resize-button:hover {
+    background-color: #5a5a5a; /* Slightly lighter on hover */
+    color: #fff;
+}
+
+#resize-button:active {
+    background-color: #3a3a3a; /* Darker on active */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Expanded state for chat container */
+#chat-container.expanded {
+    width: 640px; /* Double the original width */
+    height: 480px; /* Double the original height */
+    font-size: 20px; /* Slightly larger font for readability */
+}
+
+/* Adjust chat history padding for expanded view if needed */
+#chat-container.expanded #chat-history {
+    padding: 8px 12px;
+}
+
+/* Adjust input area for expanded view if needed */
+#chat-container.expanded #user-input {
+    font-size: 20px; /* Match container font size */
 }
