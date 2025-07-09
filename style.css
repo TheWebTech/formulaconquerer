@@ -3,15 +3,45 @@
 body {
     font-family: 'VT323', monospace; /* Pixelated font */
     background-color: #333; /* Darker background for contrast, like a calculator body */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* display: flex; justify-content: center; align-items: center; height: 100vh; */ /* Modified for new layout */
     margin: 0;
     color: #1c3b21; /* Dark green text, typical for TI screens */
+    height: 100vh; /* Ensure body takes full viewport height */
+}
+
+#page-wrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center; /* Vertically center chat-container */
+    justify-content: center; /* Horizontally center chat-container in the available space */
+    padding-left: 280px; /* Make space for the fixed info-panel. Must match info-panel width. */
+    box-sizing: border-box; /* Ensure padding doesn't add to total width in a way that breaks layout */
+}
+
+#info-panel {
+    width: 280px; /* Slightly wider for better text flow */
+    height: 100vh;
+    position: fixed; /* Fixed to the left */
+    left: 0;
+    top: 0;
+    background-color: #4a4a4a; /* Same as calculator casing for thematic consistency */
+    color: #c8d8c0; /* Pale green/greyish text, like screen background */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height calculation */
+    overflow-y: auto; /* Scroll if content is too long */
+    font-size: 16px; /* Slightly smaller than chat for differentiation */
+    line-height: 1.4;
+    border-right: 5px solid #333; /* Separator */
+    z-index: 10; /* Ensure info-panel stays on top if other elements are added */
+}
+
+#info-panel p {
+    margin-bottom: 15px;
 }
 
 #chat-container {
+    /* margin-left will be handled by page-wrapper's padding and justify-content */
+    /* margin-left: 300px; */ /* REMOVED */
     width: 320px; /* Typical width of a TI-83 screen in pixels (scaled up) */
     height: 240px; /* Typical height (scaled up) */
     background-color: #c8d8c0; /* Pale green/greyish screen background */
@@ -20,11 +50,9 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 5px rgba(0,0,0,0.3); /* Shadow for depth and inner shadow for screen */
     display: flex;
     flex-direction: column;
-    /* position: relative; removed, no longer needed for button */
     overflow: hidden;
     padding: 5px; /* Small padding inside the screen border */
     font-size: 18px; /* Larger font size for pixel look */
-    anchor-name: --chat-screen; /* Define #chat-container as an anchor */
     image-rendering: pixelated; /* Helps with the pixel look for any images/borders */
 }
 
@@ -106,54 +134,56 @@ body {
     border: 1px solid #1c3b21;
 }
 
-#resize-button {
-    position: absolute; /* Required for anchor positioning */
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    body {
+        height: auto; /* Allow body to grow with content on mobile */
+        /* display: flex settings removed from body for mobile, page-wrapper handles layout */
+    }
 
-    /* CSS Anchor Positioning */
-    /* target: top edge of button is 18px above anchor's top content/padding edge */
-    top: calc(anchor(--chat-screen top) - 18px);
-    /* target: left edge of button positions it so its right edge is 2px to the right of anchor's right content/padding edge */
-    /* Button width approx: 18px char + 8px padding + 2px border = 28px */
-    left: calc(anchor(--chat-screen right) + 2px - 28px);
+    #page-wrapper {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items to the top */
+        align-items: center; /* Center items horizontally */
+        padding-left: 0; /* No padding needed for stacked layout */
+        height: auto; /* Allow page-wrapper to grow with content */
+    }
 
-    width: 28px; /* Set fixed width for reliable positioning with calc */
-    text-align: center; /* Center the icon now that width is fixed */
-    background-color: #4a4a4a; /* Match border color */
-    color: #c8d8c0; /* Screen background color for icon */
-    border: 1px solid #333; /* Slightly darker border for definition */
-    border-radius: 3px;
-    padding: 1px 4px; /* Smaller padding for icon */
-    font-family: 'VT323', monospace; /* Keep font for consistency if needed */
-    font-size: 18px; /* Icon size */
-    line-height: 1; /* Ensure icon is centered */
-    cursor: pointer;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
-    z-index: 10;
+    #info-panel {
+        display: block; /* Show info panel */
+        position: relative; /* No longer fixed */
+        width: 90%; /* Take most of the width, with some margin */
+        max-width: 400px; /* Max width for readability */
+        height: auto; /* Adjust height to content */
+        margin: 20px auto; /* Top/bottom margin, centered horizontally */
+        border-right: none; /* No right border in stacked layout */
+        z-index: auto; /* Reset z-index */
+        /* overflow-y: auto; is still good */
+    }
+
+    #chat-container {
+        margin-left: 0; /* Ensure no residual margin */
+        margin-top: 0; /* Reset top margin if any, spacing handled by info-panel margin-bottom */
+        width: 95%; /* Make chat container more fluid, consistent with <400px rule */
+        max-width: 480px; /* Optional: a max width for chat on mobile */
+    }
 }
 
-#resize-button:hover {
-    background-color: #5a5a5a; /* Slightly lighter on hover */
-    color: #fff;
-}
+@media (max-width: 400px) { /* Further adjustments for very small screens if needed */
+    #info-panel {
+        width: 95%; /* Ensure it's also fluid on very small screens */
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 15px;
+    }
+    #chat-container {
+        width: 95%; /* Make chat container more fluid */
+        height: auto; /* Adjust height as needed or set a specific smaller height */
+        max-height: 80vh; /* Example max height */
+        font-size: 16px; /* Slightly smaller font for smaller screens */
+    }
 
-#resize-button:active {
-    background-color: #3a3a3a; /* Darker on active */
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Expanded state for chat container */
-#chat-container.expanded {
-    width: 640px; /* Double the original width */
-    height: 480px; /* Double the original height */
-    font-size: 20px; /* Slightly larger font for readability */
-}
-
-/* Adjust chat history padding for expanded view if needed */
-#chat-container.expanded #chat-history {
-    padding: 8px 12px;
-}
-
-/* Adjust input area for expanded view if needed */
-#chat-container.expanded #user-input {
-    font-size: 20px; /* Match container font size */
+    #user-input {
+        font-size: 16px; /* Match chat container font size */
+    }
 }
