@@ -429,20 +429,20 @@ Find out in relation to 1 Meter, what exponent that metric unit would be that yo
         resizeButton.addEventListener('click', () => {
             chatContainer.classList.toggle('expanded');
             if (chatContainer.classList.contains('expanded')) {
-                resizeButton.innerHTML = '&#x2922;'; // Unicode for arrows pointing inwards (Restore Down)
-                // Alternative: &#x1F5D7; (WINDOW MINIMIZE SYMBOL - might be too small/specific)
-                // Alternative: &#x26F6; (SQUARE FOUR CORNERS - a bit abstract)
+                // Container is large, button action is to shrink
+                resizeButton.innerHTML = '&#x2014;'; // EM DASH for shrink
             } else {
-                resizeButton.innerHTML = '&#x26F9;'; // Unicode for Square with Upper Right Quadrant (Maximize-like)
-                // Alternative: &#x1F5D6; (WINDOW MAXIMIZE SYMBOL - might be too small/specific)
-                // Alternative: &#x21F1; (NORTH WEST ARROW TO CORNER) + &#x21F2; (SOUTH EAST ARROW TO CORNER) - too complex for one button
+                // Container is small, button action is to expand
+                resizeButton.innerHTML = '&#x2922;'; // SOUTH EAST ARROW AND SOUTH WEST ARROW for expand
             }
         });
         // Set initial icon
+        // Assuming the container starts small (not expanded)
         if (chatContainer.classList.contains('expanded')) {
-            resizeButton.innerHTML = '&#x2922;';
+             // This case should ideally not happen on initial load if it starts small
+            resizeButton.innerHTML = '&#x2014;';
         } else {
-            resizeButton.innerHTML = '&#x26F9;';
+            resizeButton.innerHTML = '&#x2922;'; // Expand icon
         }
     }
 
